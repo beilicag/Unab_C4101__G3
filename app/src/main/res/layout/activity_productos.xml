@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/precioProducto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Productos">
+
+    <ImageView
+        android:id="@+id/logoHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/dynami_logo_horizontal_001" />
+
+    <TextView
+        android:id="@+id/textProductos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Productos"
+        android:textAlignment="center"
+        android:textColor="#282828"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/textDeportivos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Deportivos"
+        android:textAlignment="center"
+        android:textColor="#282828"
+        android:textSize="30sp" />
+
+    <ListView
+        android:id="@+id/listViewProductos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

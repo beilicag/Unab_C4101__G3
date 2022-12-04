@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app_inicio"
+    tools:context=".MainActivity"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/logoHome"
+        android:layout_width="296dp"
+        android:layout_height="169dp"
+        android:contentDescription="@string/app_name"
+        android:textAlignment="center"
+        app:srcCompat="@drawable/dynami_logo_horizontal_004" />
+
+        <ImageView
+            android:id="@+id/avatarHome"
+            android:layout_width="127dp"
+            android:layout_height="135dp"
+            tools:srcCompat="@drawable/avatar_user" />
+
+        <TextView
+            android:id="@+id/textSaludo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="Bienvenido"
+            android:textColor="#FFFFFF"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/textRegistrate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registrate"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnEntrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30sp"
+            android:layout_marginBottom="30sp"
+            android:background="#282828"
+            android:paddingLeft="50sp"
+            android:paddingTop="10sp"
+            android:paddingRight="50sp"
+            android:paddingBottom="10sp"
+            android:text="Entrar"
+            android:textColor="#FFFFFF" />
+
+</LinearLayout>
