@@ -1,7 +1,8 @@
 package com.example.sprint;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,23 +21,23 @@ public class InterProducto extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inter_producto);
 
+        interBoton = (Button) findViewById(R.id.interBoton);
         interTitulo = (TextView) findViewById(R.id.interTitulo);
-        interFoto = (ImageView) findViewById(R.id.interFoto);
         interDescripcion = (TextView) findViewById(R.id.interDescripcion);
         interPrecio = (TextView) findViewById(R.id.interPrecio);
-        interBoton = (Button) findViewById(R.id.interBoton);
+        interFoto = (ImageView) findViewById(R.id.interFoto);
         interBtnBack = (Button) findViewById(R.id.interBtnBack);
 
         Intent intentIN = getIntent();
         interTitulo.setText(intentIN.getStringExtra("name"));
         interDescripcion.setText(intentIN.getStringExtra("description"));
-        interPrecio.setText(intentIN.getStringExtra("price"));
+        interPrecio.setText(String.valueOf(intentIN.getIntExtra("price", 0)));
         interFoto.setImageResource(intentIN.getIntExtra("image",0));
 
         interBtnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Productos.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -44,7 +45,7 @@ public class InterProducto extends AppCompatActivity {
         interBoton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Productos.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
 
             }

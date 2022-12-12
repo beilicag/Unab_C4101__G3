@@ -53,7 +53,7 @@
             android:id="@+id/tempButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#04D9C4"
+            android:backgroundTint="@color/green"
             android:paddingLeft="50sp"
             android:paddingTop="7sp"
             android:paddingRight="50sp"

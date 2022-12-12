@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Sprint</string>
+    <string name="text_title_products">Productos</string>
+
+    //FORM PRODUCTS STRINGS
+    <string name="product_form_title">PRODUCTOS</string>
+    <string name="product_form_name">Nonmbre</string>
+    <string name="product_form_description">Descripción</string>
+    <string name="product_form_price">Precio</string>
+    <string name="product_form_btn">REGISTRAR</string>
+
 </resources>

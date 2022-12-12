@@ -11,19 +11,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.sprint.Entidades.Producto;
-import com.example.sprint.InterProducto;
+import com.example.sprint.InterProducto; //MainActivity2
 import com.example.sprint.R;
 
 import java.util.ArrayList;
 
 public class ProductoAdapter extends BaseAdapter {
-
-    private Context context;
     private ArrayList<Producto> arrayProductos;
+    private Context context;
 
     public ProductoAdapter(Context context, ArrayList<Producto> arrayProductos) {
-        this.context = context;
         this.arrayProductos = arrayProductos;
+        this.context = context;
     }
 
     @Override
@@ -46,14 +45,15 @@ public class ProductoAdapter extends BaseAdapter {
         LayoutInflater layoutInflater = LayoutInflater.from(this.context);
         view = layoutInflater.inflate(R.layout.producto_template, null);
 
-        Producto producto = arrayProductos.get(i);
         Button tempButton = (Button) view.findViewById (R.id.tempButton);
         ImageView tempFoto = (ImageView) view.findViewById (R.id.tempFoto);
         TextView tempTitulo = (TextView) view.findViewById(R.id.tempTitulo);
         TextView tempPecio = (TextView) view.findViewById(R.id.tempPrecio);
         TextView tempDescripcion = (TextView) view.findViewById(R.id.tempDescripcion);
 
-        tempFoto.setImageResource(producto.getImage());
+        Producto producto = arrayProductos.get(i);
+
+        tempFoto.setImageResource(R.drawable.shop_10_large);
         tempTitulo.setText(producto.getName());
         tempPecio.setText(String.valueOf(producto.getPrice()));
         tempDescripcion.setText(producto.getDescription());
@@ -64,10 +64,9 @@ public class ProductoAdapter extends BaseAdapter {
                 Intent intent =  new Intent(context.getApplicationContext(), InterProducto.class);
                 intent.putExtra("name", producto.getName());
                 intent.putExtra("description", producto.getDescription());
-                intent.putExtra("price", String.valueOf(producto.getPrice()));
+                intent.putExtra("price", producto.getPrice());
                 intent.putExtra("image", producto.getImage());
                 context.startActivity(intent);
-
             }
         });
 
@@ -77,7 +76,7 @@ public class ProductoAdapter extends BaseAdapter {
                 Intent intent =  new Intent(context.getApplicationContext(), InterProducto.class);
                 intent.putExtra("name", producto.getName());
                 intent.putExtra("description", producto.getDescription());
-                intent.putExtra("price", String.valueOf(producto.getPrice()));
+                intent.putExtra("price", producto.getPrice());
                 intent.putExtra("image", producto.getImage());
                 context.startActivity(intent);
 

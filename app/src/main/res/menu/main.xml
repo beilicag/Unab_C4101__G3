@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/itemFavorite"
+        android:icon="@drawable/icon_corazon"
+        app:showAsAction="always"
+        android:title="" />
+    <item
+        android:id="@+id/itemShare"
+        android:icon="@drawable/ic_baseline_share_24"
+        app:showAsAction="always"
+        android:title="" />
+
+        <item  android:id="@+id/itemMore"
+        android:icon="@drawable/ic_baseline_menu_24"
+        app:showAsAction="always"
+        android:title="" >
+            <menu >
+            <item
+            android:id="@+id/itemAgregar"
+            app:showAsAction="always"
+            android:title="Agregar producto" />
+            </menu>
+        </item>
+</menu>

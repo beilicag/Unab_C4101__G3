@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "778622843",
+    "firebase_url": "https://dynami-66fb3-default-rtdb.firebaseio.com",
+    "project_id": "dynami-66fb3",
+    "storage_bucket": "dynami-66fb3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:778622843:android:1005964827d575ee774fde",
+        "android_client_info": {
+          "package_name": "com.example.sprint"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "778622843-u2c7e2c6av0bfc38m8m0iso1riqr9ac8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4XEGDeOq2h5NyeBxegO7L5ep1NEjUmDw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "778622843-u2c7e2c6av0bfc38m8m0iso1riqr9ac8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

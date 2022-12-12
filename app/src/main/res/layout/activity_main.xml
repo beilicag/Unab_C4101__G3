@@ -2,57 +2,44 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/precioProducto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_app_inicio"
-    tools:context=".MainActivity"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/logoHome"
-        android:layout_width="296dp"
-        android:layout_height="169dp"
-        android:contentDescription="@string/app_name"
+        android:layout_width="363dp"
+        android:layout_height="207dp"
+        app:srcCompat="@drawable/dynami_logo_horizontal_001" />
+
+    <TextView
+        android:id="@+id/textProductos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:text="Productos"
         android:textAlignment="center"
-        app:srcCompat="@drawable/dynami_logo_horizontal_004" />
+        android:textColor="@color/black"
+        android:textSize="50sp" />
 
-        <ImageView
-            android:id="@+id/avatarHome"
-            android:layout_width="127dp"
-            android:layout_height="135dp"
-            tools:srcCompat="@drawable/avatar_user" />
+    <TextView
+        android:id="@+id/textDeportivos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:gravity="center"
+        android:text="Deportivos"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="30sp" />
 
-        <TextView
-            android:id="@+id/textSaludo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat"
-            android:text="Bienvenido"
-            android:textColor="#FFFFFF"
-            android:textSize="50sp" />
-
-        <TextView
-            android:id="@+id/textRegistrate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Registrate"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/btnEntrar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30sp"
-            android:layout_marginBottom="30sp"
-            android:background="#282828"
-            android:paddingLeft="50sp"
-            android:paddingTop="10sp"
-            android:paddingRight="50sp"
-            android:paddingBottom="10sp"
-            android:text="Entrar"
-            android:textColor="#FFFFFF" />
+    <ListView
+        android:id="@+id/listViewProductos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>
