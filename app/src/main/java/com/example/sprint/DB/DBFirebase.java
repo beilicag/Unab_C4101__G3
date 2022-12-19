@@ -9,6 +9,7 @@ import com.example.sprint.Adaptadores.ProductoAdapter;
 import com.example.sprint.Entidades.Producto;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -33,6 +34,8 @@ public class DBFirebase {
         prod.put("description", producto.getDescription());
         prod.put("price", producto.getPrice());
         prod.put("image", producto.getImage());
+        prod.put("latitud", producto.getLatitud());
+        prod.put("longitud", producto.getLongitud());
 
         // Add a new document with a generated ID
         db.collection("products").add(prod);
@@ -51,13 +54,53 @@ public class DBFirebase {
                                         document.getData().get("name").toString(),
                                         document.getData().get("description").toString(),
                                         Integer.parseInt(document.getData().get("price").toString()),
-                                        document.getData().get("image").toString()
+                                        document.getData().get("image").toString(),
+                                        document.getData().get("latitud").toString(),
+                                        document.getData().get("longitud").toString()
                                 );
                                 list.add(producto);
                             }
                             adapter.notifyDataSetChanged();
                         } else {
                             Log.e("Error document", "Error getting documents.", task.getException());
+                        }
+                    }
+                });
+    }
+
+    public void updateData(Producto producto){
+
+        db.collection("products").whereEqualTo("id", producto.getId())
+                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if(task.isSuccessful()){
+                            DocumentSnapshot document =
+                                    task.getResult().getDocuments().get(0);
+
+                            document.getReference().update(
+                                    "name", producto.getName(),
+                                    "descripcion", producto.getDescription(),
+                                    "price", producto.getPrice(),
+                                    "image", producto.getImage(),
+                                    "latitud", producto.getLatitud(),
+                                    "longitud", producto.getLongitud()
+                            );
+                        }
+                    }
+                });
+    }
+
+
+    public void deleteData(String id){
+        db.collection("products").whereEqualTo("id", id)
+                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if(task.isSuccessful()){
+                            for(QueryDocumentSnapshot document : task.getResult()){
+                                document.getReference().delete();
+                            }
                         }
                     }
                 });

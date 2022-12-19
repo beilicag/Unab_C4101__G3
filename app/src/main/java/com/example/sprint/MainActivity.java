@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -27,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     private ProductoAdapter productoAdapter;
     private ArrayList<Producto> arrayProductos;
 
-    //@SuppressLint("MissingInflatedId")
     @Override
     protected  void onCreate(Bundle saveIntanceStates) {
         super.onCreate(saveIntanceStates);
@@ -43,29 +43,12 @@ public class MainActivity extends AppCompatActivity {
         Log.e("Error DB", e.toString());
         }
 
-        //dbLocal = new DBLocal(this);
-        /*
-        Producto producto1 = new Producto("Botas para hielo", "Lorem ipsum dolor sit amet", 250000, "");
-        Producto producto2 = new Producto("Guantes de beisbol", "Lorem ipsum dolor sit amet", 250000, "");
-        Producto producto3 = new Producto("Pesas mancuerna", "Lorem ipsum dolor sit amet", 250000, "");
-        Producto producto4 = new Producto("raquetas tenis de mesa", "Lorem ipsum dolor sit amet", 250000, "");
-
-        dbLocal.insertData(producto1);
-        dbLocal.insertData(producto2);
-        dbLocal.insertData(producto3);
-        dbLocal.insertData(producto4);
-
-        arrayProductos.add(producto1);
-        arrayProductos.add(producto2);
-        arrayProductos.add(producto3);
-        arrayProductos.add(producto4);
-*/
-        //arrayProductos = productService.cursorToArrayList(dbLocal.getData());
         listViewProductos = (ListView) findViewById(R.id.listViewProductos);
         productoAdapter = new ProductoAdapter(this, arrayProductos);
         listViewProductos.setAdapter(productoAdapter);
-
         dbFirebase.getData(productoAdapter, arrayProductos);
+
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -73,12 +56,27 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
     @Override
+
     public  boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent intent;
         switch (item.getItemId()){
             case R.id.itemAgregar:
-                Intent intent = new Intent(getApplicationContext(), ProductForm.class);
+                intent = new Intent(getApplicationContext(), ProductForm.class);
                 startActivity(intent);
                 return  true;
+            case R.id.mapLocations:
+                ArrayList<String> latitudes = new ArrayList<>();
+                ArrayList<String> longitudes = new ArrayList<>();
+                for (int i=0; i< arrayProductos.size(); i++){
+                    latitudes.add(arrayProductos.get(i).getLatitud());
+                    longitudes.add(arrayProductos.get(i).getLongitud());
+                }
+                intent = new Intent(getApplicationContext(), Maps.class);
+                intent.putStringArrayListExtra("latitudes", latitudes);
+                intent.putStringArrayListExtra("longitudes", longitudes);
+                startActivity(intent);
+                return  true;
+
             case R.id.itemFavorite:
                 Toast.makeText(getApplicationContext(), "Favoritos", Toast.LENGTH_SHORT).show();
                 return  true;

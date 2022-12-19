@@ -8,6 +8,8 @@ import android.widget.Button;
 
 public class Splash extends AppCompatActivity {
     private Button btnSplash;
+    private Button btnRegistro;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,9 +19,20 @@ public class Splash extends AppCompatActivity {
         btnSplash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), Login.class);
+                startActivity(intent);
+            }
+        });
+
+        btnRegistro = (Button) findViewById(R.id.linkLogin);
+        btnRegistro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Registro.class);
                 startActivity(intent);
             }
         });
     }
+
+
 }

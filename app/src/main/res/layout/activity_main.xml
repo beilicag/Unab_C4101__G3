@@ -12,7 +12,9 @@
     <ImageView
         android:id="@+id/logoHome"
         android:layout_width="363dp"
-        android:layout_height="207dp"
+        android:layout_height="168dp"
+        android:paddingTop="20sp"
+        android:paddingBottom="0sp"
         app:srcCompat="@drawable/dynami_logo_horizontal_001" />
 
     <TextView
@@ -35,11 +37,12 @@
         android:text="Deportivos"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="30sp" />
+        android:textSize="20sp" />
 
     <ListView
         android:id="@+id/listViewProductos"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:padding="20sp" />
 
 </LinearLayout>

@@ -1,6 +1,9 @@
 package com.example.sprint;
 
+import android.content.Context;
 import android.content.Intent;
+
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -9,7 +12,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.example.sprint.Entidades.Producto;
+import com.google.firebase.storage.StorageReference;
+
 public class InterProducto extends AppCompatActivity {
+
+    private final int GALLERY_INTENT = 1;
+    private String urlImage = "";
+    private StorageReference storageReference;
+    private ActivityResultLauncher<String> content;
 
     private TextView interTitulo, interDescripcion, interPrecio;
     private ImageView interFoto;
@@ -32,7 +44,9 @@ public class InterProducto extends AppCompatActivity {
         interTitulo.setText(intentIN.getStringExtra("name"));
         interDescripcion.setText(intentIN.getStringExtra("description"));
         interPrecio.setText(String.valueOf(intentIN.getIntExtra("price", 0)));
-        interFoto.setImageResource(intentIN.getIntExtra("image",0));
+        //interFoto.setImageResource(intentIN.getIntExtra("image",0));
+        interFoto.setImageResource(R.drawable.sin_foto);
+
 
         interBtnBack.setOnClickListener(new View.OnClickListener() {
             @Override

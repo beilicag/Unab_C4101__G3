@@ -22,6 +22,9 @@
             android:id="@+id/itemAgregar"
             app:showAsAction="always"
             android:title="Agregar producto" />
+                <item
+                    android:id="@+id/mapLocations"
+                    android:title="Locaciones" />
             </menu>
         </item>
 </menu>

@@ -7,7 +7,9 @@
     android:background="@drawable/bg_app_inicio"
     android:gravity="center"
     android:orientation="vertical"
+    android:padding="5sp"
     tools:context=".Splash">
+
     <ImageView
         android:id="@+id/logoHome"
         android:layout_width="296dp"
@@ -15,12 +17,6 @@
         android:contentDescription="@string/app_name"
         android:textAlignment="center"
         app:srcCompat="@drawable/dynami_logo_horizontal_004" />
-
-    <ImageView
-        android:id="@+id/avatarHome"
-        android:layout_width="127dp"
-        android:layout_height="135dp"
-        tools:srcCompat="@drawable/avatar_user" />
 
     <TextView
         android:id="@+id/textSaludo"
@@ -31,13 +27,18 @@
         android:textColor="#FFFFFF"
         android:textSize="50sp" />
 
-    <TextView
-        android:id="@+id/textRegistrate"
+    <Button
+        android:id="@+id/linkLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#00FFFFFF"
         android:gravity="center"
-        android:text="Registrate"
+        android:paddingTop="10sp"
+        android:paddingBottom="5sp"
+        android:singleLine="false"
+        android:text="Registrate, si aún no tienes usuario"
         android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#FFFFFF"
         android:textSize="20sp" />
 
