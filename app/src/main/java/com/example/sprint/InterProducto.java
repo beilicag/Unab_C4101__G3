@@ -47,6 +47,10 @@ public class InterProducto extends AppCompatActivity {
         //interFoto.setImageResource(intentIN.getIntExtra("image",0));
         interFoto.setImageResource(R.drawable.sin_foto);
 
+        Glide.with(InterProducto.this)
+                .load(intentIN.getStringExtra("image"))
+                .override(500,500)
+                .into(interFoto);
 
         interBtnBack.setOnClickListener(new View.OnClickListener() {
             @Override

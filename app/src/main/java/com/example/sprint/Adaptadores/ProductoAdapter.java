@@ -2,11 +2,13 @@ package com.example.sprint.Adaptadores;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -51,8 +53,8 @@ public class ProductoAdapter extends BaseAdapter {
         view = layoutInflater.inflate(R.layout.producto_template, null);
 
         Button tempButton = (Button) view.findViewById (R.id.tempButton);
-        Button btnDelete = (Button) view.findViewById (R.id.tempButton);
-        Button btnEdit = (Button) view.findViewById (R.id.tempButton);
+        ImageButton btnDelete = (ImageButton) view.findViewById (R.id.btnDelete);
+        ImageButton btnEdit = (ImageButton) view.findViewById (R.id.btnEdit);
         ImageView tempFoto = (ImageView) view.findViewById (R.id.tempFoto);
         TextView tempTitulo = (TextView) view.findViewById(R.id.tempTitulo);
         TextView tempPecio = (TextView) view.findViewById(R.id.tempPrecio);

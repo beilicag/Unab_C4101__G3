@@ -81,7 +81,6 @@
                     android:id="@+id/btnEdit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:backgroundTint="#00FFFFFF"
                     app:srcCompat="@drawable/ic_baseline_mode_edit_24" />
 
@@ -89,7 +88,6 @@
                     android:id="@+id/btnDelete"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:backgroundTint="#00FFFFFF"
                     app:srcCompat="@drawable/ic_baseline_delete_forever_24" />
             </LinearLayout>
